@@ -36,17 +36,24 @@ try {
     $phone   = htmlspecialchars(trim($_POST['phone']   ?? ''), ENT_QUOTES, 'UTF-8');
     $service = htmlspecialchars(trim($_POST['service'] ?? ''), ENT_QUOTES, 'UTF-8');
     $message = htmlspecialchars(trim($_POST['message'] ?? ''), ENT_QUOTES, 'UTF-8');
+    $city    = htmlspecialchars(trim($_POST['city']    ?? ''), ENT_QUOTES, 'UTF-8');
+    $source  = htmlspecialchars(trim($_POST['source']  ?? ''), ENT_QUOTES, 'UTF-8');
 
-    // Validate
-    if (empty($name) || empty($email) || empty($message)) {
+    // Validate — name + email always required; phone OR message must be present
+    if (empty($name) || empty($email)) {
         throw new Exception('Please fill in all required fields.');
+    }
+    if (empty($phone) && empty($message)) {
+        throw new Exception('Please include a phone number or a message.');
     }
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         throw new Exception('Invalid email address.');
     }
 
     // Build email
-    $subject = 'New Quote Request from ' . $name . ' — SAGE Cleaning';
+    $subject = 'New Quote Request from ' . $name
+             . ($city ? ' (' . $city . ')' : '')
+             . ' — SAGE Cleaning';
 
     $body = "
     <html><head>
@@ -78,12 +85,10 @@ try {
             </div>
             " . ($phone ? "<div class='field'><span class='label'>Phone</span><span class='value'>{$phone}</span></div>" : '') . "
             " . ($service ? "<div class='field'><span class='label'>Service Requested</span><span class='value'>{$service}</span></div>" : '') . "
-            <div class='field'>
-                <span class='label'>Message</span>
-                <span class='value'>" . nl2br($message) . "</span>
-            </div>
+            " . ($city ? "<div class='field'><span class='label'>City</span><span class='value'>{$city}</span></div>" : '') . "
+            " . ($message ? "<div class='field'><span class='label'>Message</span><span class='value'>" . nl2br($message) . "</span></div>" : '') . "
         </div>
-        <div class='footer'>Sent from yoursagecleaning.com contact form</div>
+        <div class='footer'>Sent from yoursagecleaning.com" . ($source ? " · source: {$source}" : '') . "</div>
     </div>
     </body></html>
     ";

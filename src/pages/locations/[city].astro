@@ -147,19 +147,120 @@ const description = `Professional house cleaning in ${loc.name}, Wyoming. Reside
   <!-- City intro -->
   <section class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-6 md:px-12">
-      <div class="max-w-3xl">
-        <span class="eyebrow" data-animate="fade-up">{loc.county} · {loc.state}</span>
-        <h1 class="font-serif text-4xl md:text-5xl text-sage-dark leading-tight mb-8" data-animate="fade-up">
-          Professional Cleaning Services in<br />
-          <em class="text-sage-gold not-italic">{loc.name}, Wyoming</em>
-        </h1>
-        <div class="space-y-5 section-body" data-animate="fade-up">
-          <p>{loc.heroDesc}</p>
-          <p>{loc.localContext}</p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <!-- Left: copy + CTAs -->
+        <div>
+          <span class="eyebrow" data-animate="fade-up">{loc.county} · {loc.state}</span>
+          <h1 class="font-serif text-4xl md:text-5xl text-sage-dark leading-tight mb-8" data-animate="fade-up">
+            Professional Cleaning Services in<br />
+            <em class="text-sage-gold not-italic">{loc.name}, Wyoming</em>
+          </h1>
+          <div class="space-y-5 section-body" data-animate="fade-up">
+            <p>{loc.heroDesc}</p>
+            <p>{loc.localContext}</p>
+          </div>
+          <div class="mt-10 flex flex-col sm:flex-row gap-4" data-animate="fade-up">
+            <a href="tel:3072545338" class="btn-primary">Call 307-254-5338</a>
+            <a href="#city-quote" class="btn-gold">Get A Free Quote</a>
+          </div>
         </div>
-        <div class="mt-10 flex flex-col sm:flex-row gap-4" data-animate="fade-up">
-          <a href="tel:3072545338" class="btn-primary">Call 307-254-5338</a>
-          <a href="/contact" class="btn-gold">Get A Free Quote</a>
+
+        <!-- Right: inline quote form -->
+        <div id="city-quote" class="bg-sage-off-white border border-gray-100 p-8 md:p-10 lg:sticky lg:top-28" data-animate="fade-up">
+          <p class="text-xs font-bold text-sage-dark/60 uppercase tracking-widest mb-3">Serving {loc.county} since 2019</p>
+          <span class="eyebrow">Free Quote · No Contract</span>
+          <h2 class="font-serif text-2xl md:text-3xl text-sage-dark leading-tight mt-3 mb-2">
+            Get your <em class="text-sage-gold not-italic">{loc.name}</em> quote
+          </h2>
+          <p class="text-gray-500 text-sm mb-6">Most clients hear back the same day. Required fields marked.</p>
+
+          <form
+            action="/forms/contact-handler.php"
+            method="POST"
+            class="space-y-4"
+            data-city-form
+          >
+            <input type="hidden" name="city" value={`${loc.name}, ${loc.stateAbbr}`} />
+            <input type="hidden" name="source" value="location_page_inline" />
+            <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+
+            <div>
+              <label for={`name-${loc.slug}`} class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Your Name *</label>
+              <input
+                type="text"
+                id={`name-${loc.slug}`}
+                name="name"
+                required
+                placeholder="Jane Smith"
+                class="w-full bg-white border border-gray-200 focus:border-sage-gold focus:outline-none px-4 py-3 text-sage-dark text-sm transition-colors duration-200 placeholder-gray-300"
+              />
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for={`phone-${loc.slug}`} class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Phone *</label>
+                <input
+                  type="tel"
+                  id={`phone-${loc.slug}`}
+                  name="phone"
+                  required
+                  placeholder="307-000-0000"
+                  class="w-full bg-white border border-gray-200 focus:border-sage-gold focus:outline-none px-4 py-3 text-sage-dark text-sm transition-colors duration-200 placeholder-gray-300"
+                />
+              </div>
+              <div>
+                <label for={`email-${loc.slug}`} class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Email *</label>
+                <input
+                  type="email"
+                  id={`email-${loc.slug}`}
+                  name="email"
+                  required
+                  placeholder="you@example.com"
+                  class="w-full bg-white border border-gray-200 focus:border-sage-gold focus:outline-none px-4 py-3 text-sage-dark text-sm transition-colors duration-200 placeholder-gray-300"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for={`service-${loc.slug}`} class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Service Needed</label>
+              <select
+                id={`service-${loc.slug}`}
+                name="service"
+                class="w-full bg-white border border-gray-200 focus:border-sage-gold focus:outline-none px-4 py-3 text-sage-dark text-sm transition-colors duration-200 appearance-none"
+              >
+                <option value="">Help me choose...</option>
+                {allServices.map((s) => (
+                  <option value={s.name}>{s.name}</option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label for={`message-${loc.slug}`} class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Notes (optional)</label>
+              <input
+                type="text"
+                id={`message-${loc.slug}`}
+                name="message"
+                placeholder="Square footage, frequency, or anything else..."
+                class="w-full bg-white border border-gray-200 focus:border-sage-gold focus:outline-none px-4 py-3 text-sage-dark text-sm transition-colors duration-200 placeholder-gray-300"
+              />
+            </div>
+
+            <button type="submit" class="btn-gold w-full text-center">
+              Get My Free Quote →
+            </button>
+
+            <p class="text-xs text-gray-400 text-center pt-1">
+              Prefer to talk? Call <a href="tel:3072545338" class="text-sage-gold hover:underline font-bold">307-254-5338</a>.
+            </p>
+
+            <div data-form-error class="hidden text-sm text-red-600 text-center"></div>
+          </form>
+
+          <div data-form-success class="hidden bg-sage-gold/10 border border-sage-gold p-6 text-center mt-4">
+            <p class="font-bold text-sage-dark mb-1">Quote request sent!</p>
+            <p class="text-gray-500 text-sm">We'll be in touch shortly. For faster service, call 307-254-5338.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -194,6 +295,20 @@ const description = `Professional house cleaning in ${loc.name}, Wyoming. Reside
             </span>
           </a>
         ))}
+      </div>
+
+      <!-- Mid-page CTA -->
+      <div class="mt-16 bg-white border border-gray-100 p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6" data-animate="fade-up">
+        <div class="text-center md:text-left">
+          <h3 class="font-serif text-2xl md:text-3xl text-sage-dark leading-tight">
+            Not sure which {loc.name} service fits?
+          </h3>
+          <p class="text-gray-500 text-sm mt-2">Tell us about your space — we'll recommend the right clean and quote it for free.</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+          <a href="tel:3072545338" class="btn-primary whitespace-nowrap">Call Us</a>
+          <a href="#city-quote" class="btn-gold whitespace-nowrap">Get A Quote</a>
+        </div>
       </div>
     </div>
   </section>
@@ -287,3 +402,38 @@ const description = `Professional house cleaning in ${loc.name}, Wyoming. Reside
     </div>
   </section>
 </Page>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('form[data-city-form]');
+  if (form) {
+    const success = form.parentElement?.querySelector<HTMLElement>('[data-form-success]');
+    const errorEl = form.querySelector<HTMLElement>('[data-form-error]');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (errorEl) {
+        errorEl.classList.add('hidden');
+        errorEl.textContent = '';
+      }
+      const data = new FormData(form);
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { Accept: 'application/json' },
+        });
+        if (res.ok) {
+          form.classList.add('hidden');
+          success?.classList.remove('hidden');
+          return;
+        }
+        throw new Error('Submission failed');
+      } catch {
+        if (errorEl) {
+          errorEl.textContent = 'Something went wrong. Please call 307-254-5338.';
+          errorEl.classList.remove('hidden');
+        }
+      }
+    });
+  }
+</script>
