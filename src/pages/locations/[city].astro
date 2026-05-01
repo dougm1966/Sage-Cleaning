@@ -1,0 +1,289 @@
+---
+import Page from '../../layouts/Page.astro';
+import { locations, locationsBySlug, type Location } from '../../data/locations.ts';
+import { services as allServices } from '../../data/services.ts';
+
+export async function getStaticPaths() {
+  return locations.map((loc) => ({
+    params: { city: loc.slug },
+    props: { location: loc },
+  }));
+}
+
+interface Props {
+  location: Location;
+}
+const { location } = Astro.props;
+const loc = location;
+
+const siteUrl = 'https://www.yoursagecleaning.com';
+const pageUrl = `${siteUrl}/locations/${loc.slug}`;
+
+const services = allServices.map((s) => ({
+  name: s.name,
+  shortName: s.shortName,
+  href: `/locations/${loc.slug}/${s.slug}`,
+  desc:
+    s.slug === 'residential-cleaning'
+      ? `Weekly, bi-weekly, or monthly cleaning for homes throughout ${loc.name}.`
+      : s.slug === 'commercial-cleaning'
+        ? `Offices, retail, and small business cleaning across ${loc.name} and the surrounding area.`
+        : s.slug === 'deep-cleaning'
+          ? `Top-to-bottom detailed cleans for ${loc.name} homes that need to look their best.`
+          : s.slug === 'move-in-move-out-cleaning'
+            ? `Spotless transitions for buyers, sellers, landlords, and renters in ${loc.name}.`
+            : `Reliable turnover cleaning for short-term rental hosts in the ${loc.name} area.`,
+}));
+
+const neighbors = loc.neighbors
+  .map((slug) => locationsBySlug[slug])
+  .filter((n): n is Location => Boolean(n));
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
+    { '@type': 'ListItem', position: 2, name: 'Locations', item: `${siteUrl}/locations` },
+    { '@type': 'ListItem', position: 3, name: loc.name, item: pageUrl },
+  ],
+};
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': ['LocalBusiness', 'HouseCleaning'],
+  name: `SAGE Cleaning — ${loc.name}, ${loc.stateAbbr}`,
+  description: `Professional residential, commercial, and vacation rental cleaning services in ${loc.name}, ${loc.state}. Vetted, insured, locally owned.`,
+  url: pageUrl,
+  telephone: '307-254-5338',
+  email: 'yoursagecleaning@gmail.com',
+  image: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/xaTIbq2shiuyCF0YZ1ud/media/64fb9b62fc1b6574d9958208.png',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: loc.name,
+    addressRegion: loc.stateAbbr,
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: loc.lat,
+    longitude: loc.lng,
+  },
+  areaServed: {
+    '@type': 'City',
+    name: `${loc.name}, ${loc.stateAbbr}`,
+  },
+  priceRange: '$$',
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    opens: '08:00',
+    closes: '18:00',
+  },
+  sameAs: ['https://www.facebook.com/yoursagecleaning'],
+};
+
+const serviceSchemas = services.map((s) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `${s.name} in ${loc.name}, ${loc.stateAbbr}`,
+  serviceType: s.name,
+  description: s.desc,
+  areaServed: {
+    '@type': 'City',
+    name: `${loc.name}, ${loc.stateAbbr}`,
+  },
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'SAGE Cleaning LLC',
+    telephone: '307-254-5338',
+    url: siteUrl,
+  },
+}));
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: loc.faq.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: f.a,
+    },
+  })),
+};
+
+const title = `House Cleaning in ${loc.name}, WY | SAGE Cleaning | Free Quote`;
+const description = `Professional house cleaning in ${loc.name}, Wyoming. Residential, commercial, deep, move-out & vacation rental service. Locally owned, insured. Free quote: 307-254-5338.`.slice(0, 160);
+---
+
+<Page
+  title={title}
+  description={description}
+  heroTitle={`${loc.name}, Wyoming`}
+  heroSubtitle={loc.tagline}
+>
+  <script type="application/ld+json" is:inline slot="head" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" is:inline slot="head" set:html={JSON.stringify(localBusinessSchema)} />
+  {serviceSchemas.map((s) => (
+    <script type="application/ld+json" is:inline slot="head" set:html={JSON.stringify(s)} />
+  ))}
+  <script type="application/ld+json" is:inline slot="head" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Breadcrumb visible -->
+  <section class="bg-white border-b border-gray-100">
+    <div class="container mx-auto px-6 md:px-12 py-4">
+      <nav aria-label="Breadcrumb" class="text-xs uppercase tracking-widest text-gray-400">
+        <a href="/" class="hover:text-sage-gold">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/locations" class="hover:text-sage-gold">Locations</a>
+        <span class="mx-2">/</span>
+        <span class="text-sage-dark font-bold">{loc.name}</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- City intro -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="max-w-3xl">
+        <span class="eyebrow" data-animate="fade-up">{loc.county} · {loc.state}</span>
+        <h1 class="font-serif text-4xl md:text-5xl text-sage-dark leading-tight mb-8" data-animate="fade-up">
+          Professional Cleaning Services in<br />
+          <em class="text-sage-gold not-italic">{loc.name}, Wyoming</em>
+        </h1>
+        <div class="space-y-5 section-body" data-animate="fade-up">
+          <p>{loc.heroDesc}</p>
+          <p>{loc.localContext}</p>
+        </div>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4" data-animate="fade-up">
+          <a href="tel:3072545338" class="btn-primary">Call 307-254-5338</a>
+          <a href="/contact" class="btn-gold">Get A Free Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services in this city -->
+  <section class="py-20 md:py-24 bg-sage-off-white">
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="text-center mb-16 max-w-2xl mx-auto">
+        <span class="eyebrow" data-animate="fade-up">Available in {loc.name}</span>
+        <h2 class="section-heading mb-4" data-animate="fade-up">
+          Every Service We Offer,<br />
+          <em class="text-sage-gold not-italic">Right Here in {loc.name}</em>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-animate="stagger-children">
+        {services.map((s, i) => (
+          <a
+            href={s.href}
+            class="group block bg-white border border-gray-100 hover:border-sage-gold hover:shadow-xl transition-all duration-300 p-8"
+          >
+            <span class="block text-xs font-bold text-sage-gold uppercase tracking-widest mb-4">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <h3 class="font-serif text-xl text-sage-dark mb-3 group-hover:text-sage-gold transition-colors duration-300">
+              {s.name}
+            </h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-6">{s.desc}</p>
+            <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-sage-dark group-hover:text-sage-gold transition-colors">
+              Learn More <span aria-hidden="true">→</span>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- City FAQ -->
+  <section class="py-20 md:py-28 bg-white">
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="eyebrow" data-animate="fade-up">Common Questions</span>
+          <h2 class="section-heading" data-animate="fade-up">
+            Cleaning Service in {loc.name} —<br />
+            <em class="text-sage-gold not-italic">Your Questions Answered</em>
+          </h2>
+        </div>
+
+        <div class="space-y-4" data-animate="stagger-children">
+          {loc.faq.map((item) => (
+            <details class="group bg-sage-off-white border border-gray-100 hover:border-sage-gold transition-colors">
+              <summary class="flex items-center justify-between cursor-pointer p-6 list-none">
+                <span class="font-serif text-lg text-sage-dark pr-6">{item.q}</span>
+                <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center text-sage-gold transition-transform group-open:rotate-45 text-2xl leading-none">+</span>
+              </summary>
+              <div class="px-6 pb-6 text-gray-500 leading-relaxed">{item.a}</div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Neighboring locations -->
+  {neighbors.length > 0 && (
+    <section class="py-16 md:py-20 bg-sage-off-white">
+      <div class="container mx-auto px-6 md:px-12">
+        <div class="max-w-5xl mx-auto">
+          <span class="eyebrow" data-animate="fade-up">Nearby Service Areas</span>
+          <h2 class="font-serif text-3xl md:text-4xl text-sage-dark mb-10" data-animate="fade-up">
+            We also clean in these <em class="text-sage-gold not-italic">neighboring towns</em>
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-animate="stagger-children">
+            {neighbors.map((n) => (
+              <a
+                href={`/locations/${n.slug}`}
+                class="group block bg-white border border-gray-100 hover:border-sage-gold hover:shadow-lg transition-all duration-300 p-6"
+              >
+                <div class="flex items-center gap-3 mb-2">
+                  <svg class="w-5 h-5 text-sage-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                  </svg>
+                  <h3 class="font-serif text-xl text-sage-dark group-hover:text-sage-gold transition-colors">
+                    {n.name}, {n.stateAbbr}
+                  </h3>
+                </div>
+                <p class="text-gray-500 text-sm italic mb-4">{n.tagline}</p>
+                <span class="text-xs font-bold uppercase tracking-widest text-sage-dark group-hover:text-sage-gold transition-colors">
+                  View {n.name} →
+                </span>
+              </a>
+            ))}
+          </div>
+
+          <div class="mt-10 text-center" data-animate="fade-up">
+            <a href="/locations" class="inline-block text-sm font-bold uppercase tracking-widest text-sage-dark hover:text-sage-gold transition-colors">
+              See All 12 Service Areas →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- CTA band -->
+  <section class="py-20 md:py-24 bg-sage-dark relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_30%_50%,_#D1AF60_0%,_transparent_60%)]"></div>
+    <div class="container mx-auto px-6 md:px-12 relative z-10 text-center">
+      <span class="eyebrow text-sage-gold/70" data-animate="fade-up">Ready to Get Started?</span>
+      <h2 class="font-serif text-3xl md:text-5xl text-white mb-6 max-w-2xl mx-auto" data-animate="fade-up">
+        Book your first <em class="text-sage-gold not-italic">{loc.name}</em> cleaning today.
+      </h2>
+      <p class="text-white/60 text-lg mb-10 max-w-xl mx-auto" data-animate="fade-up">
+        Free quote, no contract, same-day response. Most {loc.name} clients are on the schedule within the week.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center" data-animate="fade-up">
+        <a href="tel:3072545338" class="btn-gold">Call 307-254-5338</a>
+        <a href="/contact" class="inline-block border-2 border-white/30 text-white font-bold uppercase tracking-widest text-sm px-10 py-5 hover:border-sage-gold hover:text-sage-gold transition-all duration-300">
+          Send A Message
+        </a>
+      </div>
+    </div>
+  </section>
+</Page>

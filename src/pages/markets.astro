@@ -1,0 +1,103 @@
+---
+import Page from '../layouts/Page.astro';
+
+const markets = [
+  {
+    icon: '👨‍👩‍👧‍👦',
+    title: 'Homeowners & Families',
+    tagline: 'Your time is for family — not chores.',
+    desc: "Between school pickups, work, cooking, and everything else, keeping the house clean often falls to the bottom of the list. SAGE Cleaning gives busy families their weekends back. We show up on a schedule that works for you, clean the way you want it done, and leave so you can get back to what matters.",
+    services: ['Weekly & bi-weekly residential', 'Monthly deep clean', 'Seasonal refreshes'],
+  },
+  {
+    icon: '🏡',
+    title: 'Airbnb & Vacation Rental Hosts',
+    tagline: 'Five-star reviews start with a five-star clean.',
+    desc: "Your listing photos look great. Your guests arrive expecting that. We make sure what they walk into matches what they booked. Reliable, fast, and thorough — SAGE Cleaning is the partner vacation rental hosts in the Big Horn Basin trust to turn their property between guests without a second thought.",
+    services: ['Same-day turnover cleaning', 'Linen service coordination', 'Post-stay inspection checklist'],
+  },
+  {
+    icon: '🏢',
+    title: 'Small Businesses',
+    tagline: "Your workspace says something about you. Let's make it count.",
+    desc: "Clients notice a clean office. Employees do too. Whether you run a retail shop, a professional office, or a service-based business, a consistently clean environment communicates that you care about the details. SAGE Cleaning can work around your hours so your business is always ready for the day.",
+    services: ['Office and suite cleaning', 'Retail and storefront', 'After-hours scheduling'],
+  },
+  {
+    icon: '🔑',
+    title: 'Real Estate Professionals',
+    tagline: 'Sell faster. List cleaner.',
+    desc: "Pre-listing cleans make a measurable difference. Buyers form an impression in the first 30 seconds. A home that smells fresh, looks spotless, and feels cared-for sells faster and for more money. SAGE Cleaning works with real estate agents and sellers across the Big Horn Basin to prepare homes for the market.",
+    services: ['Pre-listing deep clean', 'Post-closing clean for buyers', 'Vacant home maintenance'],
+  },
+  {
+    icon: '🏘️',
+    title: 'Property Managers',
+    tagline: 'Reliable turnover. Every unit. Every time.',
+    desc: "Managing multiple units means you need a cleaning partner you can trust to show up and get it done right — without you babysitting the process. SAGE Cleaning handles turnover cleans for rental properties, apartment units, and managed homes across the region with the consistency property managers rely on.",
+    services: ['Unit turnover cleaning', 'Multi-property scheduling', 'Condition reporting on request'],
+  },
+  {
+    icon: '📦',
+    title: 'Renters',
+    tagline: 'Get your deposit back. Leave the right way.',
+    desc: "Move-out cleaning is one of the most stressful parts of moving. Landlords look hard at the state you leave their property in. SAGE Cleaning's move-out service gives you landlord-ready results — so you leave confidently and get your full deposit back.",
+    services: ['Full move-out clean', 'Inside cabinets and appliances', 'Floor-to-ceiling treatment'],
+  },
+];
+---
+
+<Page
+  title="Who We Serve | SAGE Cleaning | Big Horn Basin"
+  description="SAGE Cleaning serves homeowners, vacation rental hosts, businesses, real estate professionals, property managers, and renters across the Big Horn Basin, Wyoming."
+  heroTitle="Who We Serve"
+  heroSubtitle="From busy families to vacation rental hosts — we clean for the Big Horn Basin's community."
+>
+
+  <section class="py-20 md:py-28">
+    <div class="container mx-auto px-6 md:px-12">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+        {markets.map(({ icon, title, tagline, desc, services }) => (
+          <div class="bg-white border border-gray-100 p-8 md:p-10 hover:border-sage-gold hover:shadow-xl transition-all duration-300 group" data-animate="fade-up">
+            <span class="text-4xl block mb-5">{icon}</span>
+            <span class="eyebrow">{tagline}</span>
+            <h2 class="font-serif text-2xl md:text-3xl text-sage-dark mb-4 group-hover:text-sage-gold transition-colors duration-300">
+              {title}
+            </h2>
+            <p class="text-gray-500 text-sm leading-relaxed mb-6">{desc}</p>
+            <ul class="space-y-2 mb-8">
+              {services.map(s => (
+                <li class="flex items-center gap-3 text-xs text-gray-500 uppercase tracking-wide font-medium">
+                  <span class="w-4 h-px bg-sage-gold inline-block flex-shrink-0"></span>
+                  {s}
+                </li>
+              ))}
+            </ul>
+            <a href="tel:3072545338" class="text-sage-gold text-xs font-bold uppercase tracking-widest hover:text-sage-dark transition-colors flex items-center gap-2 group-hover:gap-3 duration-200">
+              Get A Free Quote
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Is your situation here? -->
+  <section class="bg-sage-dark py-20 md:py-24 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_70%_50%,_#D1AF60_0%,_transparent_60%)]"></div>
+    <div class="container mx-auto px-6 md:px-12 text-center relative z-10">
+      <h2 class="font-serif text-3xl md:text-5xl text-white mb-5" data-animate="fade-up">
+        See your situation on this list?
+      </h2>
+      <p class="text-white/60 text-lg max-w-xl mx-auto mb-10" data-animate="fade-up">
+        Give us a call. We'll have a short conversation, understand what you need, and give you a free, no-pressure quote.
+      </p>
+      <a href="tel:3072545338" class="btn-gold text-base px-14 py-6" data-animate="fade-up">
+        Call Us Today — 307-254-5338
+      </a>
+    </div>
+  </section>
+
+</Page>

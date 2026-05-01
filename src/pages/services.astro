@@ -1,0 +1,193 @@
+---
+import Page from '../layouts/Page.astro';
+
+const services = [
+  {
+    id: 'residential',
+    num: '01',
+    title: 'Residential Cleaning',
+    tagline: 'Your home, professionally cared for',
+    desc: 'Weekly, bi-weekly, or monthly home cleaning. We handle kitchens, bathrooms, living areas, and bedrooms — tailored to your space and schedule.',
+    includes: [
+      'Kitchen deep clean — surfaces, appliances, sink',
+      'Bathrooms scrubbed — toilets, showers, mirrors',
+      'Living areas — dusting, vacuuming, mopping',
+      'Weekly, bi-weekly, or monthly schedule',
+    ],
+    ctaHeadline: 'Get A Free Residential Quote',
+    ctaSub: 'No contracts. No pressure. Just a cleaner home.',
+    cta: 'Call For A Free Quote',
+  },
+  {
+    id: 'commercial',
+    num: '02',
+    title: 'Commercial Cleaning',
+    tagline: 'A clean workspace is a productive workspace',
+    desc: "Offices, retail spaces, and small businesses. We work around your hours — scheduled or one-time — so you're always ready for the day.",
+    includes: [
+      'Office common areas & workstations',
+      'Restrooms & breakrooms',
+      'Reception & customer-facing areas',
+      'After-hours availability',
+    ],
+    ctaHeadline: 'Get A Commercial Quote',
+    ctaSub: 'After-hours available. Scheduled or one-time.',
+    cta: 'Call For A Commercial Quote',
+  },
+  {
+    id: 'deep-clean',
+    num: '03',
+    title: 'Deep Clean',
+    tagline: 'Top-to-bottom. No corners cut.',
+    desc: "The intensive clean that resets your space. Some situations call for more than a standard clean — this is it.",
+    includes: [
+      'Inside appliances (oven, fridge, microwave)',
+      'Baseboards, ceiling fans, light fixtures',
+      'Window sills and tracks',
+      'Grout scrubbing and tile detail work',
+    ],
+    ctaHeadline: 'Book A Deep Clean',
+    ctaSub: "One-time or seasonal. We'll make it feel new again.",
+    cta: 'Book A Deep Clean',
+  },
+  {
+    id: 'move',
+    num: '04',
+    title: 'Move-In / Move-Out',
+    tagline: 'Landlord-ready. Deposit-protecting.',
+    desc: "Moving is stressful enough. We leave your old place spotless and your new one truly clean before your furniture arrives.",
+    includes: [
+      'Full kitchen clean including inside all cabinets',
+      'All bathrooms scrubbed and sanitized',
+      'All floors cleaned and mopped',
+      'Walls wiped down, switch plates cleaned',
+    ],
+    ctaHeadline: 'Schedule Your Move Clean',
+    ctaSub: 'Scheduled around your move date.',
+    cta: 'Schedule Move Clean',
+  },
+  {
+    id: 'vacation-rental',
+    num: '05',
+    title: 'Vacation Rental / Airbnb',
+    tagline: '5-star cleanliness. Every turnover.',
+    desc: "Your guests expect hotel-quality. We deliver it consistently, every stay. Reliable turnover cleaning is what separates average hosts from 5-star hosts.",
+    includes: [
+      'Full clean between every guest stay',
+      'Fresh linens and towels restocked',
+      'Quick turnaround for checkout/check-in windows',
+      'Inspection checklist provided after each clean',
+    ],
+    ctaHeadline: 'Set Up Vacation Rental Service',
+    ctaSub: 'Per turnover, flexible scheduling. 5-star results.',
+    cta: 'Set Up Rental Service',
+  },
+];
+---
+
+<Page
+  title="Cleaning Services | SAGE Cleaning | Big Horn Basin, Wyoming"
+  description="Residential, commercial, deep clean, move-in/out, and vacation rental cleaning in Worland, Basin, Greybull & Lovell. Free quotes, no contracts."
+  heroTitle="Find Your Service."
+  heroSubtitle="Five professional cleaning services. One trusted team. Free quotes."
+>
+
+  <script type="application/ld+json" is:inline slot="head">
+  {"@context":"https://schema.org","@type":"Service","name":"Residential Cleaning","description":"Weekly, bi-weekly, or monthly home cleaning services in the Big Horn Basin, Wyoming.","provider":{"@type":"LocalBusiness","name":"SAGE Cleaning LLC"},"areaServed":["Worland, WY","Basin, WY","Greybull, WY","Lovell, WY","Powell, WY","Big Horn County, WY"],"serviceType":"Residential Cleaning"}
+  </script>
+  <script type="application/ld+json" is:inline slot="head">
+  {"@context":"https://schema.org","@type":"Service","name":"Commercial Cleaning","description":"Office and business cleaning services for companies of all sizes in the Big Horn Basin, Wyoming.","provider":{"@type":"LocalBusiness","name":"SAGE Cleaning LLC"},"areaServed":["Worland, WY","Basin, WY","Greybull, WY","Lovell, WY","Powell, WY","Big Horn County, WY"],"serviceType":"Commercial Cleaning"}
+  </script>
+  <script type="application/ld+json" is:inline slot="head">
+  {"@context":"https://schema.org","@type":"Service","name":"Deep Clean","description":"Top-to-bottom intensive cleaning including inside appliances, baseboards, ceiling fans, and grout work in the Big Horn Basin, Wyoming.","provider":{"@type":"LocalBusiness","name":"SAGE Cleaning LLC"},"areaServed":["Worland, WY","Basin, WY","Greybull, WY","Lovell, WY","Powell, WY","Big Horn County, WY"],"serviceType":"Deep Clean"}
+  </script>
+  <script type="application/ld+json" is:inline slot="head">
+  {"@context":"https://schema.org","@type":"Service","name":"Move-In / Move-Out Cleaning","description":"Landlord-ready move-in and move-out cleaning service in the Big Horn Basin, Wyoming.","provider":{"@type":"LocalBusiness","name":"SAGE Cleaning LLC"},"areaServed":["Worland, WY","Basin, WY","Greybull, WY","Lovell, WY","Powell, WY","Big Horn County, WY"],"serviceType":"Move-In Move-Out Cleaning"}
+  </script>
+  <script type="application/ld+json" is:inline slot="head">
+  {"@context":"https://schema.org","@type":"Service","name":"Vacation Rental & Airbnb Cleaning","description":"Hotel-quality turnover cleaning for Airbnb and vacation rental hosts in the Big Horn Basin, Wyoming.","provider":{"@type":"LocalBusiness","name":"SAGE Cleaning LLC"},"areaServed":["Worland, WY","Basin, WY","Greybull, WY","Lovell, WY","Powell, WY","Big Horn County, WY"],"serviceType":"Vacation Rental Cleaning"}
+  </script>
+
+  <!-- Intro -->
+  <section class="py-12 md:py-16 bg-white border-b border-gray-100">
+    <div class="container mx-auto px-6 md:px-12">
+      <p class="section-body text-lg leading-relaxed text-sage-dark max-w-3xl" data-animate="fade-up">
+        SAGE Cleaning offers five professional cleaning services across the Big Horn Basin, Wyoming — from weekly home cleaning to vacation rental turnovers. Find your service below and get a free quote in minutes.
+      </p>
+    </div>
+  </section>
+
+  <!-- Feature Rows -->
+  <section class="py-16 md:py-24 bg-sage-off-white">
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="space-y-4">
+
+        {services.map((s) => (
+          <div id={s.id} class="grid grid-cols-1 lg:grid-cols-[1fr_360px] border border-gray-100 bg-white overflow-hidden hover:border-sage-gold transition-colors duration-300 group" data-animate="fade-up">
+
+            <!-- Content side -->
+            <div class="p-8 md:p-12">
+              <div class="text-sage-dark/25 font-bold text-xs uppercase tracking-widest mb-2">Service {s.num}</div>
+              <h2 class="font-serif text-2xl md:text-3xl text-sage-dark mb-2 group-hover:text-sage-gold transition-colors duration-200">{s.title}</h2>
+              <span class="text-sage-gold font-bold text-xs uppercase tracking-widest block mb-5">{s.tagline}</span>
+              <p class="text-gray-500 text-sm leading-relaxed mb-6 max-w-xl">{s.desc}</p>
+              <ul class="space-y-2.5">
+                {s.includes.map(item => (
+                  <li class="flex items-start gap-3 text-sm text-gray-600">
+                    <svg class="w-4 h-4 text-sage-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- CTA panel -->
+            <div class="bg-sage-dark p-8 md:p-10 flex flex-col justify-center relative overflow-hidden">
+              <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_80%_20%,_#D1AF60_0%,_transparent_60%)]"></div>
+              <div class="relative z-10">
+                <span class="text-white/40 font-bold text-xs uppercase tracking-widest block mb-3">Ready to book?</span>
+                <h3 class="font-serif text-xl text-white leading-snug mb-2">{s.ctaHeadline}</h3>
+                <p class="text-white/50 text-sm mb-6">{s.ctaSub}</p>
+                <a href="tel:3072545338" class="flex items-center gap-2.5 text-sage-gold font-bold text-lg mb-6 hover:text-white transition-colors">
+                  <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                  </svg>
+                  307-254-5338
+                </a>
+                <div class="flex flex-col gap-3">
+                  <a href="tel:3072545338" class="btn-gold text-center text-sm py-4">{s.cta}</a>
+                  <a href="/contact" class="text-center border border-white/20 text-white font-bold uppercase tracking-widest text-xs py-4 px-6 hover:border-sage-gold hover:text-sage-gold transition-all duration-200">Send A Message</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        ))}
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Band -->
+  <section class="bg-sage-gold py-16 md:py-20">
+    <div class="container mx-auto px-6 md:px-12 text-center">
+      <h2 class="font-serif text-3xl md:text-4xl text-white mb-4" data-animate="fade-up">
+        Not sure which service fits?
+      </h2>
+      <p class="text-white/80 mb-8 text-lg" data-animate="fade-up">
+        Give us a call. We'll figure it out together — free, no pressure.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center" data-animate="fade-up">
+        <a href="tel:3072545338" class="btn-primary bg-sage-dark hover:bg-white hover:text-sage-dark text-base px-14 py-6">
+          Call 307-254-5338
+        </a>
+        <a href="/contact" class="inline-block border-2 border-white text-white font-bold uppercase tracking-widest text-sm px-12 py-6 hover:bg-white hover:text-sage-dark transition-all duration-300">
+          Send A Message
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Page>

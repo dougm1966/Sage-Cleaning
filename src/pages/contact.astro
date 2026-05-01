@@ -1,0 +1,258 @@
+---
+import Page from '../layouts/Page.astro';
+---
+
+<Page
+  title="Contact SAGE Cleaning | Get A Free Quote Today"
+  description="Contact SAGE Cleaning for a free cleaning quote in the Big Horn Basin. Call 307-254-5338 or fill out our form — no contracts, same-day response."
+  heroTitle="Get In Touch"
+  heroSubtitle="We'll get back to you fast. Usually the same day."
+>
+
+  <script type="application/ld+json" is:inline slot="head">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact SAGE Cleaning",
+    "description": "Get a free quote for residential, commercial, or vacation rental cleaning in the Big Horn Basin, Wyoming.",
+    "url": "https://sagecleaning.com/contact",
+    "mainEntity": {
+      "@type": "LocalBusiness",
+      "name": "SAGE Cleaning",
+      "telephone": "307-254-5338",
+      "email": "yoursagecleaning@gmail.com",
+      "areaServed": "Big Horn Basin, Wyoming"
+    }
+  }
+  </script>
+
+  <section class="py-20 md:py-28">
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+        <!-- Contact info -->
+        <div>
+          <span class="eyebrow" data-animate="fade-up">The Fast Way</span>
+          <h2 class="font-serif text-4xl md:text-5xl text-sage-dark mb-6" data-animate="fade-up">
+            Call or text us.<br />
+            <em class="text-sage-gold not-italic">We answer.</em>
+          </h2>
+          <p class="section-body mb-10" data-animate="fade-up">
+            The quickest way to get a quote is to call. We'll ask a few questions, learn about your space, and give you a clear, honest quote — no pressure, no obligation.
+          </p>
+
+          <div class="space-y-6" data-animate="stagger-children">
+            <a
+              href="tel:3072545338"
+              class="flex items-center gap-5 group bg-sage-off-white p-6 border border-gray-100 hover:border-sage-gold hover:shadow-lg transition-all duration-300"
+            >
+              <div class="w-12 h-12 bg-sage-gold/10 rounded-none flex items-center justify-center flex-shrink-0 group-hover:bg-sage-gold/20 transition-colors">
+                <svg class="w-5 h-5 text-sage-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                </svg>
+              </div>
+              <div>
+                <span class="block text-xs text-gray-400 uppercase tracking-widest font-medium mb-1">Call or Text</span>
+                <span class="text-sage-dark font-bold text-xl group-hover:text-sage-gold transition-colors">307-254-5338</span>
+              </div>
+            </a>
+
+            <a
+              href="mailto:yoursagecleaning@gmail.com"
+              class="flex items-center gap-5 group bg-sage-off-white p-6 border border-gray-100 hover:border-sage-gold hover:shadow-lg transition-all duration-300"
+            >
+              <div class="w-12 h-12 bg-sage-gold/10 rounded-none flex items-center justify-center flex-shrink-0 group-hover:bg-sage-gold/20 transition-colors">
+                <svg class="w-5 h-5 text-sage-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div>
+                <span class="block text-xs text-gray-400 uppercase tracking-widest font-medium mb-1">Email</span>
+                <span class="text-sage-dark font-bold group-hover:text-sage-gold transition-colors">yoursagecleaning@gmail.com</span>
+              </div>
+            </a>
+
+            <div class="flex items-start gap-5 bg-sage-off-white p-6 border border-gray-100">
+              <div class="w-12 h-12 bg-sage-gold/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-sage-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div>
+                <span class="block text-xs text-gray-400 uppercase tracking-widest font-medium mb-1">Service Area</span>
+                <span class="text-sage-dark font-bold leading-snug">Worland, Basin, Greybull, Lovell<br />&amp; the Big Horn Basin, Wyoming</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact form -->
+        <div>
+          <span class="eyebrow" data-animate="fade-up">Or Send A Message</span>
+          <h2 class="font-serif text-4xl md:text-5xl text-sage-dark mb-8" data-animate="fade-up">
+            Ready for a<br />
+            <em class="text-sage-gold not-italic">cleaner space?</em>
+          </h2>
+
+          <form
+            action="forms/contact-handler.php"
+            method="POST"
+            class="space-y-5"
+            data-animate="fade-up"
+            id="contact-form"
+          >
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="name" class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Your Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Jane Smith"
+                  class="w-full bg-sage-off-white border border-gray-200 focus:border-sage-gold focus:outline-none px-5 py-4 text-sage-dark text-sm transition-colors duration-200 placeholder-gray-300"
+                />
+              </div>
+              <div>
+                <label for="phone" class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="307-000-0000"
+                  class="w-full bg-sage-off-white border border-gray-200 focus:border-sage-gold focus:outline-none px-5 py-4 text-sage-dark text-sm transition-colors duration-200 placeholder-gray-300"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="email" class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="you@example.com"
+                class="w-full bg-sage-off-white border border-gray-200 focus:border-sage-gold focus:outline-none px-5 py-4 text-sage-dark text-sm transition-colors duration-200 placeholder-gray-300"
+              />
+            </div>
+
+            <div>
+              <label for="service" class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Service Needed</label>
+              <select
+                id="service"
+                name="service"
+                class="w-full bg-sage-off-white border border-gray-200 focus:border-sage-gold focus:outline-none px-5 py-4 text-sage-dark text-sm transition-colors duration-200 appearance-none"
+              >
+                <option value="">Select a service...</option>
+                <option>Residential Cleaning</option>
+                <option>Commercial Cleaning</option>
+                <option>Deep Clean</option>
+                <option>Move-In / Move-Out</option>
+                <option>Vacation Rental / Airbnb</option>
+                <option>Not Sure — Help Me Choose</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="preferred_time" class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Preferred Day &amp; Time</label>
+              <select
+                id="preferred_time"
+                name="preferred_time"
+                class="w-full bg-sage-off-white border border-gray-200 focus:border-sage-gold focus:outline-none px-5 py-4 text-sage-dark text-sm transition-colors duration-200 appearance-none"
+              >
+                <option value="">Anytime works...</option>
+                <option>Morning (8am–12pm)</option>
+                <option>Afternoon (12pm–5pm)</option>
+                <option>Monday Morning</option>
+                <option>Monday Afternoon</option>
+                <option>Tuesday Morning</option>
+                <option>Tuesday Afternoon</option>
+                <option>Wednesday Morning</option>
+                <option>Wednesday Afternoon</option>
+                <option>Thursday Morning</option>
+                <option>Thursday Afternoon</option>
+                <option>Friday Morning</option>
+                <option>Friday Afternoon</option>
+                <option>Saturday Morning</option>
+                <option>Saturday Afternoon</option>
+              </select>
+            </div>
+
+            <fieldset>
+              <legend class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-3">How Often?</legend>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {['Weekly', 'Bi-Weekly', 'Monthly'].map((freq) => (
+                  <label class="flex items-center gap-3 bg-sage-off-white border border-gray-200 hover:border-sage-gold px-5 py-4 cursor-pointer transition-colors duration-200">
+                    <input
+                      type="checkbox"
+                      name="frequency"
+                      value={freq}
+                      class="w-4 h-4 accent-sage-gold flex-shrink-0"
+                    />
+                    <span class="text-sage-dark text-sm font-medium">{freq}</span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+
+            <div>
+              <label for="message" class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Tell Us About Your Space</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Square footage, number of rooms, specific needs, preferred schedule..."
+                class="w-full bg-sage-off-white border border-gray-200 focus:border-sage-gold focus:outline-none px-5 py-4 text-sage-dark text-sm transition-colors duration-200 placeholder-gray-300 resize-none"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="btn-primary w-full text-center text-base py-6"
+            >
+              Send My Request
+            </button>
+
+            <p class="text-xs text-gray-400 text-center">
+              We typically respond within a few hours. For urgent requests, call <a href="tel:3072545338" class="text-sage-gold hover:underline">307-254-5338</a>.
+            </p>
+          </form>
+
+          <!-- Success / error states -->
+          <div id="form-success" class="hidden bg-sage-gold/10 border border-sage-gold p-6 text-center">
+            <p class="font-bold text-sage-dark mb-1">Message sent!</p>
+            <p class="text-gray-500 text-sm">We'll be in touch shortly. For faster service, call 307-254-5338.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Page>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const success = document.getElementById('form-success')!;
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { Accept: 'application/json' },
+        });
+        if (res.ok) {
+          form.classList.add('hidden');
+          success.classList.remove('hidden');
+        }
+      } catch {
+        // Fallback: let native form submission handle it
+        form.submit();
+      }
+    });
+  }
+</script>

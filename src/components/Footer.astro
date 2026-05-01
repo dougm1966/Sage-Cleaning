@@ -1,0 +1,90 @@
+---
+const links = [
+  { href: '/services', label: 'Services' },
+  { href: '/markets', label: 'Our Markets' },
+  { href: '/about', label: 'About Us' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<footer class="bg-sage-dark text-white">
+  <!-- Main footer -->
+  <div class="container mx-auto px-6 md:px-12 py-16 md:py-20">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+
+      <!-- Brand column -->
+      <div>
+        <img
+          src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/xaTIbq2shiuyCF0YZ1ud/media/64fb9b62fc1b6574d9958208.png"
+          alt="SAGE Cleaning"
+          width="140"
+          height="47"
+          class="w-32 h-auto object-contain mb-6"
+        />
+        <p class="text-white/50 text-sm leading-relaxed max-w-xs">
+          The Big Horn Basin's most trusted cleaning service. Vetted, insured, and dedicated to excellence.
+        </p>
+      </div>
+
+      <!-- Navigation column -->
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-widest text-sage-gold mb-6">Quick Links</h3>
+        <ul class="space-y-3">
+          {links.map(({ href, label }) => (
+            <li>
+              <a href={href} class="text-white/60 hover:text-white text-sm transition-colors duration-200">
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Contact column -->
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-widest text-sage-gold mb-6">Get In Touch</h3>
+        <ul class="space-y-4">
+          <li>
+            <a href="tel:3072545338" class="flex items-center gap-3 text-white/60 hover:text-white transition-colors duration-200 group">
+              <svg class="w-4 h-4 text-sage-gold flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+              <span class="text-sm font-medium">307-254-5338</span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:yoursagecleaning@gmail.com" class="flex items-center gap-3 text-white/60 hover:text-white transition-colors duration-200">
+              <svg class="w-4 h-4 text-sage-gold flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <span class="text-sm">yoursagecleaning@gmail.com</span>
+            </a>
+          </li>
+          <li class="flex items-start gap-3 text-white/50">
+            <svg class="w-4 h-4 text-sage-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span class="text-sm leading-relaxed">Serving Powell, Worland, Basin, Greybull, Lovell &amp; the Big Horn Basin</span>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/yoursagecleaning" target="_blank" rel="noopener" class="inline-flex items-center gap-3 text-white/60 hover:text-white transition-colors duration-200" aria-label="SAGE Cleaning on Facebook">
+              <svg class="w-4 h-4 text-sage-gold flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0022 12z"/>
+              </svg>
+              <span class="text-sm">Follow us on Facebook</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="border-t border-white/10">
+    <div class="container mx-auto px-6 md:px-12 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-white/30 text-xs">
+      <span>&copy; {new Date().getFullYear()} SAGE Cleaning. All rights reserved.</span>
+      <span>Big Horn Basin, Wyoming</span>
+    </div>
+  </div>
+</footer>

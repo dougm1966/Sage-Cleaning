@@ -1,0 +1,237 @@
+---
+import Page from '../layouts/Page.astro';
+
+const values = [
+  {
+    title: 'Integrity',
+    desc: "We do what we say we'll do. Every cleaner we send to your home is someone we'd trust in our own.",
+  },
+  {
+    title: 'Reliability',
+    desc: "We show up on time, every time. If something changes, you hear from us — not the other way around.",
+  },
+  {
+    title: 'Excellence',
+    desc: "Good enough isn't our standard. We clean to a level that makes you want to show off your home.",
+  },
+  {
+    title: 'Community',
+    desc: "We're your neighbors. The Big Horn Basin isn't just where we work — it's where we live.",
+  },
+];
+
+const iconClass = 'w-6 h-6 text-sage-gold flex-shrink-0';
+const iconAttrs = `class="${iconClass}" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"`;
+
+const trustItems = [
+  {
+    label: 'Vetted & Background-Checked',
+    icon: `<svg ${iconAttrs}><path d="M12 3l8 3v6c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>`,
+    ariaLabel: 'All team members are background-checked for your safety and peace of mind',
+  },
+  {
+    label: 'Fully Insured',
+    icon: `<svg ${iconAttrs}><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>`,
+    ariaLabel: 'Comprehensive insurance coverage protects your home and our work',
+  },
+  {
+    label: 'Locally Owned & Operated',
+    icon: `<svg ${iconAttrs}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+    ariaLabel: 'We are a local Wyoming business, deeply rooted in the Big Horn Basin community',
+  },
+  {
+    label: 'Satisfaction Guaranteed',
+    icon: `<svg ${iconAttrs}><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+    ariaLabel: 'If something is not right, we fix it at no extra charge',
+  },
+  {
+    label: 'No Long-Term Contracts',
+    icon: `<svg ${iconAttrs}><path d="M17 11c1.66 0 3-1.34 3-3s-1.34-3-3-3M7 11c1.66 0 3-1.34 3-3S8.66 5 7 5"/><path d="M21 21v-1a4 4 0 00-3-3.87M3 21v-1a4 4 0 013-3.87"/><circle cx="12" cy="9" r="3"/><path d="M16 21v-1a4 4 0 00-8 0v1"/></svg>`,
+    ariaLabel: 'Flexible scheduling with no binding commitments required',
+  },
+  {
+    label: 'Transparent Pricing',
+    icon: `<svg ${iconAttrs}><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><circle cx="7.5" cy="7.5" r="1" fill="currentColor"/></svg>`,
+    ariaLabel: 'Clear, upfront pricing with no hidden fees or surprises',
+  },
+];
+
+const serviceAreas = [
+  'Worland',
+  'Basin',
+  'Greybull',
+  'Lovell',
+  'Big Horn County',
+  'Surrounding communities',
+];
+---
+
+<Page
+  title="About SAGE Cleaning | Big Horn Basin's Trusted Cleaners"
+  description="SAGE Cleaning is a locally owned cleaning company serving the Big Horn Basin, Wyoming since 2023. Meet the team, learn our 47-point cleaning standard, and discover why local families trust us."
+  heroTitle="About SAGE Cleaning"
+  heroSubtitle="Local roots. High standards. A team you can trust."
+>
+
+  <!-- Story section -->
+  <section class="py-20 md:py-28">
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+        <!-- Image -->
+        <div class="relative overflow-hidden" data-animate="clip-reveal">
+          <img
+            src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/xaTIbq2shiuyCF0YZ1ud/media/6502346b6637991484a6ac49.png"
+            alt="Lisa Lynn, founder of SAGE Cleaning"
+            width="600"
+            height="800"
+            class="w-full h-full object-cover object-top shadow-2xl"
+          />
+          <div class="absolute bottom-0 left-0 right-0 h-1 bg-sage-gold"></div>
+        </div>
+
+        <!-- Story copy -->
+        <div>
+          <span class="eyebrow" data-animate="fade-up">Our Story</span>
+          <h2 class="section-heading mb-6" data-animate="fade-up">
+            Built for the<br />
+            <em class="text-sage-gold not-italic">Big Horn Basin</em>
+          </h2>
+          <div class="space-y-5 section-body" data-animate="fade-up">
+            <p>
+              SAGE Cleaning was founded with a simple belief: the people of the Big Horn Basin deserve a cleaning service they can actually trust. Not a national franchise with high turnover and no accountability — a local team that shows up, does the work, and stands behind it.
+            </p>
+            <p>
+              The name SAGE is no accident. Like the plant that defines this landscape — hardy, natural, and essential — we aim to be a reliable part of this community. Clean, honest, and rooted here. Since 2023, we've been serving families and businesses across Worland, Basin, Greybull, Lovell, and the surrounding Big Horn County communities.
+            </p>
+            <p>
+              We follow a rigorous 47-point cleaning checklist on every visit — from baseboards to ceiling fans, inside appliances to light fixtures. Every cleaner we hire goes through our thorough vetting process. Every job is backed by our satisfaction guarantee. And every invoice is simple — sent by text message, with no hidden fees.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder / Team section (NEW E-E-A-T booster) -->
+  <section class="py-20 md:py-28 bg-sage-off-white">
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+        <!-- Team copy -->
+        <div>
+          <span class="eyebrow" data-animate="fade-up">Who We Are</span>
+          <h2 class="section-heading mb-8" data-animate="fade-up">Meet the Team Behind SAGE</h2>
+          <div class="space-y-5 section-body" data-animate="fade-up">
+            <p>
+              SAGE Cleaning was founded by Wyoming locals who understand what it takes to build trust in our community. Our founder has deep roots in the Big Horn Basin and believed the region deserved better than the one-size-fits-all franchise model.
+            </p>
+            <p>
+              Today, our team of vetted, background-checked cleaners represents the standard we stand behind. Every person on the SAGE team is trained to our high standards, insured, and committed to treating your home with the same care they'd give their own.
+            </p>
+            <p>
+              When you hire SAGE, you're not just getting a cleaning service — you're hiring your neighbors. People who live here, understand this place, and are invested in keeping our community thriving.
+            </p>
+          </div>
+        </div>
+
+        <!-- Team image -->
+        <div class="relative overflow-hidden order-first lg:order-last" data-animate="clip-reveal">
+          <img
+            src="https://placehold.co/800x500/093626/D1AF60?text=Meet+The+Team"
+            alt="The SAGE Cleaning team serving the Big Horn Basin"
+            width="800"
+            height="500"
+            class="w-full h-full object-cover shadow-2xl"
+          />
+          <div class="absolute bottom-0 left-0 right-0 h-1 bg-sage-gold"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="py-20 md:py-28 bg-white">
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="text-center mb-16">
+        <span class="eyebrow" data-animate="fade-up">What We Stand For</span>
+        <h2 class="section-heading" data-animate="fade-up">Our Values</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" data-animate="stagger-children">
+        {values.map(({ title, desc }) => (
+          <div class="bg-sage-off-white p-8 border border-gray-100 hover:border-sage-gold hover:shadow-lg transition-all duration-300 group">
+            <div class="w-10 h-1 bg-sage-gold mb-6"></div>
+            <h3 class="font-serif text-xl text-sage-dark mb-3 group-hover:text-sage-gold transition-colors duration-300">
+              {title}
+            </h3>
+            <p class="text-gray-500 text-sm leading-relaxed">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust signals -->
+  <section class="py-20 md:py-28 bg-sage-off-white">
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="text-center mb-16">
+        <span class="eyebrow" data-animate="fade-up">Why Clients Trust Us</span>
+        <h2 class="section-heading" data-animate="fade-up">
+          Every Box Checked.<br />
+          <em class="text-sage-gold not-italic">Every Time.</em>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto" data-animate="stagger-children">
+        {trustItems.map(({ label, icon, ariaLabel }) => (
+          <div class="flex items-center gap-4 bg-white p-6 border border-gray-100 hover:border-sage-gold transition-colors" role="article" aria-label={ariaLabel}>
+            <span class="flex-shrink-0" set:html={icon} />
+            <span class="text-sage-dark font-bold text-sm leading-snug">{label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Service area -->
+  <section class="py-20 md:py-24 bg-sage-dark relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_30%_50%,_#D1AF60_0%,_transparent_60%)]"></div>
+    <div class="container mx-auto px-6 md:px-12 relative z-10">
+      <div class="max-w-3xl">
+        <span class="eyebrow text-sage-gold/70" data-animate="fade-up">Where We Clean</span>
+        <h2 class="font-serif text-3xl md:text-5xl text-white mb-8" data-animate="fade-up">
+          Proudly Serving the<br />Big Horn Basin
+        </h2>
+        <p class="text-white/60 text-lg mb-8 leading-relaxed" data-animate="fade-up">
+          SAGE Cleaning provides residential, commercial, and vacation rental cleaning services throughout the Big Horn Basin and Big Horn County, Wyoming. We serve the following communities:
+        </p>
+
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10" data-animate="stagger-children">
+          {serviceAreas.map(area => (
+            <li class="flex items-center gap-3 text-white" data-animate="fade-up">
+              <svg class="w-5 h-5 text-sage-gold flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+                <path fill="#093626" d="M9 12l2 2 4-4"/>
+              </svg>
+              <span class="font-medium text-lg">{area}</span>
+            </li>
+          ))}
+        </ul>
+
+        <p class="text-white/50 text-base mb-8" data-animate="fade-up">
+          Not sure if we cover your area? Give us a call at 307-254-5338 or send us a message — we may be able to help.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4" data-animate="fade-up">
+          <a href="tel:3072545338" class="btn-gold">Call 307-254-5338</a>
+          <a href="/contact" class="inline-block border-2 border-white/30 text-white font-bold uppercase tracking-widest text-sm px-10 py-5 hover:border-sage-gold hover:text-sage-gold transition-all duration-300">
+            Send A Message
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Page>

@@ -1,0 +1,123 @@
+---
+const pathname = Astro.url.pathname;
+
+const links = [
+  { href: '/services', label: 'Services' },
+  { href: '/markets', label: 'Our Markets' },
+  { href: '/locations', label: 'Locations' },
+  { href: '/about', label: 'About Us' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<nav
+  id="main-nav"
+  class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-all duration-500 overflow-visible"
+  style="height: 96px;"
+>
+  <div class="container mx-auto px-6 md:px-12 h-full flex items-end justify-between pb-0">
+    <!-- Logo — aligned to bottom of nav so it hangs below into the hero -->
+    <a href="/" class="flex-shrink-0 self-end" aria-label="SAGE Cleaning — Home">
+      <img
+        id="nav-logo"
+        src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/xaTIbq2shiuyCF0YZ1ud/media/64fb9b62fc1b6574d9958208.png"
+        alt="SAGE Cleaning"
+        width="160"
+        height="160"
+        class="w-auto h-auto object-contain transition-all duration-500"
+        style="max-height: 110px;"
+      />
+    </a>
+
+    <!-- Desktop nav -->
+    <div class="hidden lg:flex items-center gap-10 self-center">
+      {links.map(({ href, label }) => (
+        <a
+          href={href}
+          class={`text-xs font-bold uppercase tracking-widest transition-colors duration-200 ${
+            pathname === href
+              ? 'text-sage-gold'
+              : 'text-sage-dark/60 hover:text-sage-dark'
+          }`}
+        >
+          {label}
+        </a>
+      ))}
+      <a
+        href="tel:3072545338"
+        class="btn-primary text-xs"
+      >
+        Get A Quote
+      </a>
+    </div>
+
+    <!-- Mobile menu button -->
+    <button
+      id="mobile-menu-btn"
+      class="lg:hidden p-2 text-sage-dark self-center"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
+      <svg id="menu-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+      <svg id="menu-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="hidden">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    id="mobile-menu"
+    class="hidden lg:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 shadow-lg"
+  >
+    <div class="container mx-auto px-6 py-6 flex flex-col gap-4">
+      {links.map(({ href, label }) => (
+        <a
+          href={href}
+          class={`text-sm font-bold uppercase tracking-widest py-2 border-b border-gray-100 ${
+            pathname === href ? 'text-sage-gold' : 'text-sage-dark'
+          }`}
+        >
+          {label}
+        </a>
+      ))}
+      <a href="tel:3072545338" class="btn-primary text-center mt-2">
+        Get A Quote — 307-254-5338
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const nav = document.getElementById('main-nav')!;
+  const btn = document.getElementById('mobile-menu-btn')!;
+  const menu = document.getElementById('mobile-menu')!;
+  const iconOpen = document.getElementById('menu-open')!;
+  const iconClose = document.getElementById('menu-close')!;
+
+  const logo = document.getElementById('nav-logo') as HTMLImageElement;
+
+  // Nav + logo shrink on scroll
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      nav.style.height = '72px';
+      nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+      logo.style.maxHeight = '75px';
+    } else {
+      nav.style.height = '96px';
+      nav.style.boxShadow = '';
+      logo.style.maxHeight = '110px';
+    }
+  }, { passive: true });
+
+  // Mobile menu toggle
+  btn.addEventListener('click', () => {
+    const isOpen = !menu.classList.contains('hidden');
+    menu.classList.toggle('hidden', isOpen);
+    iconOpen.classList.toggle('hidden', !isOpen);
+    iconClose.classList.toggle('hidden', isOpen);
+    btn.setAttribute('aria-expanded', String(!isOpen));
+  });
+</script>

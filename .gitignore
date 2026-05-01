@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.astro/
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+/.playwright-mcp/
+
+# Scratch / helper scripts
+all_found_images.html
+check_errors.mjs
+extract_text.mjs
+fetch_site_details.mjs
+fetch_site_puppeteer.mjs
+fetch_site_*.mjs
+find_all_images.mjs
+take_screenshot.mjs
+index.html
+
+# Screenshot / mockup images (not source assets)
+screenshot.png
+screenshots/
+live_site.png
+live_about.png
+live_markets.png
+live_services.png
+mockup-services-all3.png
+option-a.png
+option-b.png
+option-c.png
+image.png
+"image copy.png"
+"image copy 2.png"
+
+# Claude local settings (keep skills/agents, not local overrides)
+.claude/settings.local.json
+
+# OS
+.DS_Store
+Thumbs.db

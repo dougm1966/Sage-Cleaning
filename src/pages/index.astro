@@ -1,0 +1,516 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Base
+  title="SAGE Cleaning | The Big Horn Basin's Best Cleaning Experience"
+  description="Expert residential, commercial, and vacation rental cleaning in the Big Horn Basin. Vetted cleaners, simple invoicing, personalized service. Free quote — no contracts."
+>
+
+  <script type="application/ld+json" is:inline slot="head">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "SAGE Cleaning",
+    "description": "Expert residential, commercial, and vacation rental cleaning services in the Big Horn Basin, Wyoming.",
+    "url": "https://sagecleaning.com"
+  }
+  </script>
+
+  <script type="application/ld+json" is:inline slot="head">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much does house cleaning cost in the Big Horn Basin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cleaning costs in the Big Horn Basin vary based on the size of your home or business, the type of cleaning you need, and your schedule. A residential cleaning typically ranges from one-time deep cleans to weekly recurring service. SAGE Cleaning provides free, no-obligation quotes — just call 307-254-5338."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I know SAGE's cleaners are trustworthy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every SAGE Cleaning team member is vetted and background-checked before we send them to your home. We're fully insured and locally owned — you're working with neighbors, not a faceless corporation. If something's not right, we make it right."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to be home during my cleaning appointment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, you don't need to be home. Many SAGE Cleaning clients prefer not to be. We can work with a keypad code, a key, or arrange a convenient time. You'll receive a simple text invoice when we're done."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should I have my home professionally cleaned?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Many families find weekly or bi-weekly cleaning keeps their home comfortable and reduces stress. Busy professionals and larger homes often benefit from bi-weekly or monthly service. SAGE Cleaning works with you to build a schedule that fits your life and budget."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's included in a deep clean vs. a standard clean?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A standard clean covers kitchens, bathrooms, living areas, and bedrooms. A SAGE deep clean is top-to-bottom: inside appliances, baseboards, ceiling fans, light fixtures, window sills, behind furniture, and detailed tile and grout work."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you clean Airbnb and vacation rentals in Worland and the Big Horn Basin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. SAGE Cleaning specializes in vacation rental and Airbnb turnover cleaning across Worland, Basin, Greybull, Lovell, and the Big Horn Basin. We deliver hotel-quality cleanliness between every guest stay with quick turnarounds and inspection checklists."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I get a quote from SAGE Cleaning?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Call or text 307-254-5338, or fill out the contact form at sagecleaning.com/contact. We'll ask about your space, your needs, and your schedule, then give you a clear, honest quote with no hidden fees or pressure to commit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What areas does SAGE Cleaning serve?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SAGE Cleaning serves Worland, Basin, Greybull, Lovell, and the surrounding communities throughout Big Horn County, Wyoming. We're locally owned and rooted in this community. Call 307-254-5338 if you're unsure whether we cover your area."
+        }
+      }
+    ]
+  }
+  </script>
+  <Nav />
+
+  <main>
+
+    <!-- ═══════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════ -->
+    <section id="hero" class="relative min-h-screen flex items-center pt-24 overflow-hidden bg-sage-off-white">
+      <!-- Background gradient -->
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_40%,_rgba(9,54,38,0.04)_0%,_transparent_70%)]"></div>
+
+      <div class="container mx-auto px-6 md:px-12 py-20 md:py-32 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          <!-- Copy -->
+          <div>
+            <span class="eyebrow" id="hero-eyebrow">The Big Horn Basin's</span>
+            <h1 class="font-serif text-6xl md:text-7xl xl:text-8xl leading-[1.05] mb-8 text-sage-dark" id="hero-headline">
+              Best Cleaning<br />
+              <em class="text-sage-gold not-italic">Experience</em>
+            </h1>
+            <p class="section-body max-w-lg mb-10" id="hero-sub">
+              Come home to a spotless space — every time. SAGE Cleaning brings vetted, trustworthy cleaners to homes and businesses across the Big Horn Basin.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4" id="hero-ctas">
+              <a href="tel:3072545338" class="btn-primary text-center">
+                Get A Free Quote
+              </a>
+              <a href="/services" class="inline-block border-2 border-sage-dark text-sage-dark font-bold uppercase tracking-widest text-sm px-10 py-5 hover:bg-sage-dark hover:text-white transition-all duration-300">
+                See Our Services
+              </a>
+            </div>
+            <!-- Trust micro-copy -->
+            <p class="text-xs text-gray-400 font-medium uppercase tracking-widest mt-6">
+              Vetted &bull; Insured &bull; Satisfaction Guaranteed
+            </p>
+          </div>
+
+          <!-- Hero image -->
+          <div class="relative" id="hero-image-wrap">
+            <div class="relative overflow-hidden rounded-none">
+              <img
+                src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/xaTIbq2shiuyCF0YZ1ud/media/64fb95323955f6154b230d9b.png"
+                alt="SAGE Cleaning team — professional aprons"
+                width="600"
+                height="650"
+                class="w-full h-auto object-cover drop-shadow-2xl"
+                id="hero-img"
+                data-animate="parallax"
+              />
+            </div>
+            <!-- Floating badge -->
+            <div class="absolute -bottom-6 -left-6 bg-sage-dark text-white p-6 shadow-2xl hidden md:block" id="hero-badge">
+              <span class="text-sage-gold font-bold text-3xl font-serif block leading-none">20+</span>
+              <span class="text-xs uppercase tracking-widest text-white/70 mt-1 block">Years of Experience</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-sage-dark/30" id="scroll-indicator">
+        <span class="text-xs uppercase tracking-widest">Scroll</span>
+        <div class="w-px h-12 bg-sage-gold/40 animate-pulse"></div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+         SOCIAL PROOF STRIP
+    ═══════════════════════════════════════ -->
+    <section class="bg-sage-dark py-6 overflow-hidden">
+      <div class="container mx-auto px-6 md:px-12">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-white text-sm">
+          <span class="font-bold uppercase tracking-widest text-sage-gold/80 text-xs">Trusted Across the Basin</span>
+          <div class="flex flex-wrap justify-center md:justify-end gap-8 text-white/60 text-xs uppercase tracking-widest font-medium">
+            <span>Worland</span>
+            <span class="text-sage-gold">·</span>
+            <span>Basin</span>
+            <span class="text-sage-gold">·</span>
+            <span>Greybull</span>
+            <span class="text-sage-gold">·</span>
+            <span>Lovell</span>
+            <span class="text-sage-gold">·</span>
+            <span>& Surrounding Communities</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+         SERVICES PREVIEW
+    ═══════════════════════════════════════ -->
+    <section class="py-24 md:py-32 bg-white" id="services-section">
+      <div class="container mx-auto px-6 md:px-12">
+
+        <div class="text-center mb-16 md:mb-20">
+          <span class="eyebrow" data-animate="fade-up">What We Offer</span>
+          <h2 class="section-heading" data-animate="fade-up">
+            Cleaning Services That <br class="hidden md:block" />
+            <em class="text-sage-gold not-italic">Fit Your Life</em>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" data-animate="stagger-children">
+
+          {[
+            {
+              icon: '🏠',
+              title: 'Residential Cleaning',
+              desc: 'Weekly, bi-weekly, or monthly home cleaning. We handle kitchens, bathrooms, living areas, and bedrooms so you can focus on what matters.',
+              href: '/services',
+            },
+            {
+              icon: '🏢',
+              title: 'Commercial Cleaning',
+              desc: 'A clean office is a productive office. We serve businesses of all sizes — scheduled or one-time.',
+              href: '/services',
+            },
+            {
+              icon: '✨',
+              title: 'Deep Clean',
+              desc: 'Top-to-bottom intensive cleaning. Perfect for first-time clients, seasonal resets, or pre-listing a home.',
+              href: '/services',
+            },
+            {
+              icon: '📦',
+              title: 'Move-In / Move-Out',
+              desc: 'Transitions are stressful enough. We leave your old place spotless and your new one ready to live in.',
+              href: '/services',
+            },
+            {
+              icon: '🏡',
+              title: 'Vacation Rental',
+              desc: 'Hotel-quality turnover for Airbnb and VRBO hosts. Quick, reliable, and guest-ready every time.',
+              href: '/services',
+            },
+            {
+              icon: '📋',
+              title: 'Custom Plan',
+              desc: "Every home and business is different. Tell us what you need and we'll build a cleaning plan around you.",
+              href: '/contact',
+              cta: 'Get A Custom Quote',
+            },
+          ].map(({ icon, title, desc, href, cta }) => (
+            <a
+              href={href}
+              class="group block bg-sage-off-white p-8 border border-gray-100 hover:border-sage-gold hover:shadow-xl transition-all duration-300"
+            >
+              <span class="text-4xl mb-5 block">{icon}</span>
+              <h3 class="font-serif text-xl text-sage-dark mb-3 group-hover:text-sage-gold transition-colors duration-200">
+                {title}
+              </h3>
+              <p class="text-gray-500 text-sm leading-relaxed mb-5">{desc}</p>
+              <span class="text-sage-gold text-xs font-bold uppercase tracking-widest group-hover:gap-3 flex items-center gap-2 transition-all duration-200">
+                {cta ?? 'Learn More'}
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </a>
+          ))}
+
+        </div>
+
+        <div class="text-center mt-14">
+          <a href="/services" class="btn-primary">View All Services</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+         WHY CHOOSE SAGE — split image + copy
+    ═══════════════════════════════════════ -->
+    <section class="py-24 md:py-32 bg-sage-off-white overflow-hidden">
+      <div class="container mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          <!-- Image -->
+          <div class="relative overflow-hidden" data-animate="clip-reveal">
+            <img
+              src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/xaTIbq2shiuyCF0YZ1ud/media/64fb92d4fc1b65d30b955e59.jpeg"
+              alt="Professional cleaning in action"
+              width="600"
+              height="500"
+              class="w-full h-full object-cover shadow-2xl"
+            />
+            <!-- Gold accent bar -->
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-sage-gold"></div>
+          </div>
+
+          <!-- Copy -->
+          <div>
+            <span class="eyebrow" data-animate="fade-up">Why SAGE Cleaning</span>
+            <h2 class="section-heading mb-8" data-animate="fade-up">
+              We Show Up.<br />We Do the Work.<br />
+              <em class="text-sage-gold not-italic">Every Time.</em>
+            </h2>
+            <p class="section-body mb-10" data-animate="fade-up">
+              In the Big Horn Basin, we know that trust isn't given — it's earned. Every SAGE cleaner is vetted, background-checked, and committed to treating your home with the same care they'd give their own.
+            </p>
+
+            <div class="space-y-6" data-animate="stagger-children">
+              {[
+                {
+                  icon: '✓',
+                  title: 'Vetted Cleaners',
+                  desc: 'Background-checked, trained, and held to our high standards of integrity.',
+                },
+                {
+                  icon: '✓',
+                  title: 'Simple Invoicing',
+                  desc: 'We text you a simple invoice after your cleaning. No paperwork, no hassle.',
+                },
+                {
+                  icon: '✓',
+                  title: 'Personalized Plans',
+                  desc: 'Your home is unique. We build a cleaning plan that fits your schedule and priorities.',
+                },
+                {
+                  icon: '✓',
+                  title: 'Satisfaction Guaranteed',
+                  desc: "If something's not right, we make it right. No questions asked.",
+                },
+              ].map(({ icon, title, desc }) => (
+                <div class="flex gap-4">
+                  <span class="w-8 h-8 rounded-full bg-sage-gold/10 text-sage-gold font-bold flex items-center justify-center flex-shrink-0 text-sm mt-0.5">
+                    {icon}
+                  </span>
+                  <div>
+                    <h4 class="font-bold text-sage-dark text-sm uppercase tracking-wide mb-1">{title}</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">{desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+         TESTIMONIALS
+    ═══════════════════════════════════════ -->
+    <section class="py-24 md:py-32 bg-white">
+      <div class="container mx-auto px-6 md:px-12">
+        <div class="text-center mb-16">
+          <span class="eyebrow" data-animate="fade-up">What Our Clients Say</span>
+          <h2 class="section-heading" data-animate="fade-up">Real Results.<br /><em class="text-sage-gold not-italic">Real People.</em></h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-animate="stagger-children">
+          {[
+            {
+              quote: "SAGE transformed my house before the holidays. I couldn't believe the difference. I walked in and actually teared up — it was that good.",
+            },
+            {
+              quote: "Finally found a reliable cleaner for my Airbnb. My guests leave 5-star reviews every single time. SAGE is the reason I can run my rental stress-free.",
+            },
+            {
+              quote: "Professional, punctual, and thorough. My office has never looked better, and my team actually notices. Worth every penny.",
+            },
+          ].map(({ quote }) => (
+            <div class="bg-sage-off-white p-8 md:p-10 border-l-4 border-sage-gold relative">
+              <svg class="w-8 h-8 text-sage-gold/30 mb-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+              </svg>
+              <p class="text-gray-600 leading-relaxed italic mb-8 text-[0.95rem]">"{quote}"</p>
+              <div>
+                <span class="text-gray-400 text-xs uppercase tracking-wider italic">Real customer testimonial pending</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+         FAQ SECTION
+    ═══════════════════════════════════════ -->
+    <section class="py-24 md:py-32 bg-sage-off-white">
+      <div class="container mx-auto px-6 md:px-12">
+        <div class="text-center mb-16">
+          <span class="eyebrow" data-animate="fade-up">Frequently Asked</span>
+          <h2 class="section-heading" data-animate="fade-up">
+            Questions About<br />
+            <em class="text-sage-gold not-italic">SAGE Cleaning</em>
+          </h2>
+        </div>
+
+        <div class="max-w-3xl mx-auto space-y-4" data-animate="stagger-children">
+          <details class="group bg-white border border-gray-100 p-6 md:p-8 cursor-pointer hover:border-sage-gold transition-colors duration-200" data-animate="fade-up">
+            <summary class="flex items-center justify-between font-serif text-lg text-sage-dark group-open:text-sage-gold transition-colors duration-200">
+              <span>How much does house cleaning cost in the Big Horn Basin?</span>
+              <svg class="w-5 h-5 text-sage-gold group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <p class="text-gray-600 text-sm leading-relaxed mt-4">
+              Cleaning costs in the Big Horn Basin vary based on the size of your home or business, the type of cleaning you need, and your schedule. A residential cleaning typically ranges from one-time deep cleans to weekly recurring service. We provide free, no-obligation quotes — just call us at 307-254-5338 with details about your space and needs.
+            </p>
+          </details>
+
+          <details class="group bg-white border border-gray-100 p-6 md:p-8 cursor-pointer hover:border-sage-gold transition-colors duration-200" data-animate="fade-up">
+            <summary class="flex items-center justify-between font-serif text-lg text-sage-dark group-open:text-sage-gold transition-colors duration-200">
+              <span>How do I know SAGE's cleaners are trustworthy?</span>
+              <svg class="w-5 h-5 text-sage-gold group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <p class="text-gray-600 text-sm leading-relaxed mt-4">
+              Every SAGE Cleaning team member is vetted and background-checked before we send them to your home. We stand behind our people and our work — if something's not right, we make it right. We're also fully insured and locally owned, which means you're working with neighbors, not a faceless corporation.
+            </p>
+          </details>
+
+          <details class="group bg-white border border-gray-100 p-6 md:p-8 cursor-pointer hover:border-sage-gold transition-colors duration-200" data-animate="fade-up">
+            <summary class="flex items-center justify-between font-serif text-lg text-sage-dark group-open:text-sage-gold transition-colors duration-200">
+              <span>Do I need to be home during my cleaning appointment?</span>
+              <svg class="w-5 h-5 text-sage-gold group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <p class="text-gray-600 text-sm leading-relaxed mt-4">
+              No, you don't need to be home. Many of our clients at SAGE Cleaning prefer not to be — it's one of the biggest time-savers. We can work with a keypad code, a key, or arrange a convenient time for you to let us in. You'll receive a simple text invoice when we're done.
+            </p>
+          </details>
+
+          <details class="group bg-white border border-gray-100 p-6 md:p-8 cursor-pointer hover:border-sage-gold transition-colors duration-200" data-animate="fade-up">
+            <summary class="flex items-center justify-between font-serif text-lg text-sage-dark group-open:text-sage-gold transition-colors duration-200">
+              <span>How often should I have my home professionally cleaned?</span>
+              <svg class="w-5 h-5 text-sage-gold group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <p class="text-gray-600 text-sm leading-relaxed mt-4">
+              It depends on your lifestyle and home. Many families find that weekly or bi-weekly cleaning keeps their homes comfortable and reduces stress. Busy professionals and larger homes often benefit from bi-weekly or monthly service. SAGE Cleaning works with you to build a schedule that fits your life and budget.
+            </p>
+          </details>
+
+          <details class="group bg-white border border-gray-100 p-6 md:p-8 cursor-pointer hover:border-sage-gold transition-colors duration-200" data-animate="fade-up">
+            <summary class="flex items-center justify-between font-serif text-lg text-sage-dark group-open:text-sage-gold transition-colors duration-200">
+              <span>What's included in a deep clean vs. a standard clean?</span>
+              <svg class="w-5 h-5 text-sage-gold group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <p class="text-gray-600 text-sm leading-relaxed mt-4">
+              A standard clean covers kitchens, bathrooms, living areas, and bedrooms. A deep clean is top-to-bottom intensive work: inside appliances, baseboards, ceiling fans, light fixtures, window sills, behind furniture, and detailed tile and grout work. We offer both at SAGE Cleaning depending on your needs.
+            </p>
+          </details>
+
+          <details class="group bg-white border border-gray-100 p-6 md:p-8 cursor-pointer hover:border-sage-gold transition-colors duration-200" data-animate="fade-up">
+            <summary class="flex items-center justify-between font-serif text-lg text-sage-dark group-open:text-sage-gold transition-colors duration-200">
+              <span>Do you clean Airbnb and vacation rentals in Worland and the Big Horn Basin?</span>
+              <svg class="w-5 h-5 text-sage-gold group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <p class="text-gray-600 text-sm leading-relaxed mt-4">
+              Absolutely. SAGE Cleaning specializes in vacation rental and Airbnb turnover cleaning across Worland, Basin, Greybull, Lovell, and the Big Horn Basin. We deliver hotel-quality cleanliness between every guest stay, with quick turnarounds and inspection checklists to keep your ratings at 5 stars.
+            </p>
+          </details>
+
+          <details class="group bg-white border border-gray-100 p-6 md:p-8 cursor-pointer hover:border-sage-gold transition-colors duration-200" data-animate="fade-up">
+            <summary class="flex items-center justify-between font-serif text-lg text-sage-dark group-open:text-sage-gold transition-colors duration-200">
+              <span>How do I get a quote from SAGE Cleaning?</span>
+              <svg class="w-5 h-5 text-sage-gold group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <p class="text-gray-600 text-sm leading-relaxed mt-4">
+              Getting a free quote from SAGE Cleaning is easy — just call us at 307-254-5338 or text us your details. You can also fill out our contact form at /contact. We'll ask about your space, your needs, and your preferences, then give you a clear, honest quote with no hidden fees or pressure to commit.
+            </p>
+          </details>
+
+          <details class="group bg-white border border-gray-100 p-6 md:p-8 cursor-pointer hover:border-sage-gold transition-colors duration-200" data-animate="fade-up">
+            <summary class="flex items-center justify-between font-serif text-lg text-sage-dark group-open:text-sage-gold transition-colors duration-200">
+              <span>What areas does SAGE Cleaning serve?</span>
+              <svg class="w-5 h-5 text-sage-gold group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <p class="text-gray-600 text-sm leading-relaxed mt-4">
+              SAGE Cleaning serves Worland, Basin, Greybull, Lovell, and the surrounding communities throughout Big Horn County, Wyoming. We're locally owned and rooted in this community. If you're not sure whether we cover your area, give us a call at 307-254-5338 — we might be able to help.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+         CTA BAND
+    ═══════════════════════════════════════ -->
+    <section class="bg-sage-dark py-24 md:py-32 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_30%_50%,_#D1AF60_0%,_transparent_60%)]"></div>
+      <div class="container mx-auto px-6 md:px-12 text-center relative z-10">
+        <span class="eyebrow text-sage-gold/70" data-animate="fade-up">Ready to Get Started?</span>
+        <h2 class="font-serif text-4xl md:text-6xl text-white leading-tight mb-6 max-w-3xl mx-auto" data-animate="fade-up">
+          Your Time Is Too Valuable<br />To Spend Cleaning
+        </h2>
+        <p class="text-white/60 text-lg max-w-xl mx-auto mb-10" data-animate="fade-up">
+          Call us today for a free quote. No contracts, no commitments — just a cleaner home and more time for the things that matter.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center" data-animate="fade-up">
+          <a href="tel:3072545338" class="btn-gold text-center text-base px-12 py-6">
+            Call 307-254-5338
+          </a>
+          <a href="/contact" class="inline-block border-2 border-white/30 text-white font-bold uppercase tracking-widest text-sm px-12 py-6 hover:border-sage-gold hover:text-sage-gold transition-all duration-300 text-center">
+            Send A Message
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Base>

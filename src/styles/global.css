@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: auto; /* Lenis handles this */
+  }
+
+  body {
+    @apply bg-sage-off-white text-sage-dark antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: theme('colors.sage-gold');
+    color: white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-block bg-sage-dark text-white font-bold uppercase tracking-widest text-sm px-10 py-5
+           hover:bg-sage-gold transition-all duration-300 ease-luxury;
+  }
+
+  .btn-gold {
+    @apply inline-block bg-sage-gold text-white font-bold uppercase tracking-widest text-sm px-10 py-5
+           hover:bg-sage-dark transition-all duration-300 ease-luxury;
+  }
+
+  .eyebrow {
+    @apply block text-sage-gold font-bold uppercase tracking-[0.25em] text-xs mb-4;
+  }
+
+  .section-heading {
+    @apply font-serif text-4xl md:text-5xl lg:text-6xl leading-tight text-sage-dark;
+  }
+
+  .section-body {
+    @apply text-gray-500 text-lg leading-relaxed;
+  }
+}
+
+/* Nav scroll state */
+nav.nav-scrolled {
+  @apply shadow-md;
+  height: 72px !important;
+}
+
+/* Clip-path animation support */
+[data-animate="clip-reveal"] {
+  overflow: hidden;
+}
+
+/* Prevent FOUC on animated elements */
+[data-animate] {
+  will-change: transform, opacity;
+}
