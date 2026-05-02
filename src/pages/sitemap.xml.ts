@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import { locations } from '../data/locations';
 import { services } from '../data/services';
+import { markets } from '../data/markets';
 
 const SITE = 'https://sagecleaning.com';
 
@@ -15,6 +16,12 @@ export const GET: APIRoute = () => {
     const priority = path === '' ? '1.0' : '0.8';
     urls.push(
       `<url><loc>${SITE}${path}</loc><lastmod>${today}</lastmod><changefreq>weekly</changefreq><priority>${priority}</priority></url>`
+    );
+  }
+
+  for (const m of markets) {
+    urls.push(
+      `<url><loc>${SITE}/markets/${m.slug}</loc><lastmod>${today}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>`
     );
   }
 
