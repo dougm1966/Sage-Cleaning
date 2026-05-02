@@ -26,6 +26,7 @@ export interface Market {
   heroSubtitle: string;
   tagline: string;
   shortDesc: string;
+  cardCta: string;
   problem: string;
   solution: string;
   benefits: MarketBenefit[];
@@ -51,6 +52,7 @@ export const markets: Market[] = [
     tagline: 'Your time is for family — not chores.',
     shortDesc:
       'Weekly, bi-weekly, and monthly residential cleaning for households who would rather spend their weekend living than scrubbing.',
+    cardCta: 'Get My Weekends Back',
     problem:
       "Between school pickups, work, sports, dinners, and trying to have a social life, the house gets the leftover hours. The dust never quits in this part of Wyoming — wind, gravel, the dog, the kids — and the to-do list just keeps growing. Most weeks, deep cleaning loses to a movie night, and you tell yourself you'll catch up Saturday. You don't.",
     solution:
@@ -136,6 +138,7 @@ export const markets: Market[] = [
     tagline: 'Five-star reviews start with a five-star clean.',
     shortDesc:
       'Same-day Airbnb and VRBO turnovers, linen handling, and photo-documented walkthroughs for short-term rental hosts.',
+    cardCta: 'Book My Turnover Crew',
     problem:
       "Your listing photos look great. The reviews are how you stay booked. One bad turnover — a missed hair in the shower, a dirty coffee pot, beds left half-made — and a guest writes the review that costs you the next ten bookings. Tight check-out / check-in windows during Yellowstone season leave zero margin for error, and a no-show cleaner means you’re scrubbing toilets in jeans an hour before guests arrive.",
     solution:
@@ -227,6 +230,7 @@ export const markets: Market[] = [
     tagline: 'Your workspace says something about you. Let’s make it count.',
     shortDesc:
       'After-hours office, retail, and storefront cleaning across the Big Horn Basin — on a schedule built around your business, not ours.',
+    cardCta: 'Quote My Office Clean',
     problem:
       "Clients notice a clean office. So do employees — and so do the auditors, vendors, and walk-ins who form a first impression before you’ve said a word. But nobody on your team got hired to scrub bathrooms or run a vacuum, and the unreliable solo cleaner who keeps no-showing isn’t solving it. A dirty office quietly costs you trust.",
     solution:
@@ -314,6 +318,7 @@ export const markets: Market[] = [
     tagline: 'Sell faster. List cleaner.',
     shortDesc:
       'Pre-listing cleans, post-closing prep, and vacant home maintenance for real estate agents, sellers, and buyers across the Big Horn Basin.',
+    cardCta: 'Prep My Listing',
     problem:
       "A buyer forms a real impression of a house in the first 30 seconds. Smudged windows, a faint pet smell, dust on the baseboards, a film on the kitchen tile — they don’t show up in the photos but they kill the offer. You’ve seen listings sit on the market because the seller “cleaned it themselves.” You’ve also seen the right pre-listing clean turn a tired house into a multiple-offer weekend.",
     solution:
@@ -405,6 +410,7 @@ export const markets: Market[] = [
     tagline: 'Reliable turnover. Every unit. Every time.',
     shortDesc:
       'Unit turnover cleaning, multi-property scheduling, and condition reporting for property managers across the Big Horn Basin.',
+    cardCta: 'Price My Portfolio',
     problem:
       "Managing rentals means juggling move-outs, move-ins, repairs, and the inspection between them. The cleaner who flakes is the cleaner who blows up your turnover schedule and pushes the next tenant’s move-in. Multiply that by every unit you manage and you’re babysitting cleaners instead of running a portfolio.",
     solution:
@@ -496,6 +502,7 @@ export const markets: Market[] = [
     tagline: 'Get your deposit back. Leave the right way.',
     shortDesc:
       'Landlord-ready move-out cleans for renters in Cody, Powell, and across the Big Horn Basin. Full deposit back — or as close as we can get you.',
+    cardCta: 'Save My Deposit',
     problem:
       "Move-out is already stressful: packing, the truck, the new place, the utilities. The last thing you want is to spend Sunday night scrubbing inside the oven on your hands and knees — especially when your landlord is going to find one missed spot anyway and dock your deposit. A few hundred dollars on the line, and you’re trying to clean a house you’ve emotionally already left.",
     solution:
