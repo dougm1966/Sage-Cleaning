@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+Disallow: /forms/
+
+# Block AI training crawlers
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+Sitemap: https://sagecleaning.com/sitemap.xml

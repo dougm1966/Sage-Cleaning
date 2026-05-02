@@ -4,8 +4,11 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
+    "build": "astro build && npm run scan",
+    "build:nocheck": "astro build",
+    "preview": "astro preview",
+    "scan": "node scripts/prelaunch-scan.mjs",
+    "prelaunch": "npm run build"
   },
   "dependencies": {
     "astro": "^4.16.0",
